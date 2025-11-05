@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Siddhesh Goel</title>
+    <link rel="stylesheet" href="stylesheet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="ZMyLogo.png" />
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <div id="menu-hotspot"></div>
+    <header>
+    <div class="logo-container" onclick="toggleMenu()"> 
+      <img src="ZMyLogo.png" alt="Logo" class="logo-img" />
+    </div>
+    <div class="central-header-text">SID</div>
+    
+    <button id="mode-toggle" onclick="toggleDarkMode()">
+      <i class="fas fa-moon"></i>
+    </button>
+    </header>
+    <nav id="main-nav">
+        <a href="#intro">Intro</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <main>
+      <section class="intro" id="intro">
+        <div class="intro-card">
+          <div class="intro-photo">
+            <img src="Zmypic.png" alt="Your Photo" />
+          </div>
+          <div class="intro-text">
+            <h1>Siddhesh Goel</h1>
+            <p>
+              First-year undergraduate at Scaler School of Technology,
+              passionate about blending creativity with technical innovation in
+              AI and Machine Learning.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="socials-section">
+        <div class="socials-card">
+          <a
+            href="https://www.instagram.com/su.sid.al"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/siddheshgoel"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+
+          <a
+            href="https://github.com/soelnvc"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+
+          <a href="mailto:soelnvc@gmail.com" class="social-icon">
+            <i class="fas fa-envelope"></i>
+          </a>
+
+          <a href="tel:+919569902020" class="social-icon">
+            <i class="fas fa-phone"></i>
+          </a>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section class="about" id="about">
+        <h2>About Me</h2>
+        <p>
+          I'm a first-year undergraduate at Scaler School of Technology, also
+          pursuing my B.Sc. (Hons.) from BITS Pilani. As a lifelong learner, I
+          believe in the power of continuous growth and discovery. My passion
+          lies at the intersection of Artificial Intelligenceand creative
+          expression. I'm deeply fascinated by how technology can amplify human
+          creativity and solve complex problems. With a keen eye for detail and
+          a unique perspective on the world, I approach every challenge as an
+          opportunity to learn something new. My goal is to become an AI
+          Engineer who doesn't just build systems, but creates experiences that
+          truly matter.
+        </p>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-container">
+          <div class="project-card">
+            <img src="ZBank.jpg" alt="Project 1" />
+            <h3>Banking Interface</h3>
+            <p>
+              A simple bank account creatio, debiting and crediting interface
+              built using Python, CustomTkinter and SQL.
+            </p>
+          </div>
+
+          <div class="project-card">
+            <img src="Zport.png" alt="Project 2" />
+            <h3>Portfolio Website</h3>
+            <p>A very basic Portfolio website using HTML and CSS.</p>
+          </div>
+
+          <div class="project-card">
+            <img src="ZDogs.png" alt="Project 3" />
+            <h3>Dog Gallery</h3>
+            <p>A pinterest like dog gallery built using HTML and CSS.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section id="photography">
+        <h2 class="photography-title" style="color: black;">Photography</h2>
+        <div class="photo-gallery">
+          <img src="Zp8.jpg" alt="Photography 1" />
+          <img src="Zp11.jpg" alt="Photography 2" />
+          <img src="Zp3.jpg" alt="Photography 3" />
+          <img src="Zp5.jpg" alt="Photography 4" />
+          <img src="Zp2.jpg" alt="Photography 5" />
+          <img src="Zp7.jpg" alt="Photography 6" />
+          <img src="Zp4.jpg" alt="Photography 7" />
+          <img src="Zp1.jpg" alt="Photography 8" />
+          <img src="Zp9.jpg" alt="Photography 9" />
+          <img src="Zp10.jpg" alt="Photography 10" />
+          <img src="Zp6.jpg" alt="Photography 11" />
+        </div>
+      </section>
+
+
+      <section id="contact">
+        <h2 class="contact-title">Contact Me</h2>
+        <p class="contact-subtext">
+          Let's get in touch. I'd love to hear from you.
+        </p>
+
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Mail- soelnvc@gmail.com</p>
+        <p>Instagram-su.sid.al | LinkedIn-siddheshgoel | GitHub-soelnvc</p>
+        <p>Mobile no.- +91 9569902020</p>
+      </section>
+    </footer>
+  </body>
+</html>

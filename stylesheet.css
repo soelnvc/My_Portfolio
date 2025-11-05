@@ -1,0 +1,546 @@
+html {
+    scroll-behavior: smooth; /* <--- ADD THIS LINE */
+}
+/* reset */
+* {margin:0; padding:0; box-sizing:border-box;}
+
+
+/*
+ * 1. HEADER GRID LAYOUT (Light Mode)
+ * Uses CSS Grid for a robust 3-column structure: Logo | SID | Toggle.
+ */
+/* 1. HEADER GRID LAYOUT (Light Mode) */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  
+  /* ... existing styles ... */
+  
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; 
+  align-items: center; /* Crucial for vertical alignment */
+  
+  /* ADD: Standardize the header height for consistent centering */
+  height: 80px; 
+
+  background: #000; 
+  padding: 0 5%; /* Use padding 0 now that height is set, or keep 1.5rem for top/bottom */
+  z-index: 1000;
+  /* ... rest of header styles ... */
+}
+
+/* Ensure the Logo Container is in the first column and aligned left */
+header .logo-container {
+    grid-column: 1 / 2;
+    justify-self: start;
+    display: flex; 
+    align-items: center;
+    gap: 0; 
+    cursor: pointer;
+}
+
+/* Ensure the Dark Mode Toggle is in the third column and aligned right */
+#mode-toggle {
+    grid-column: 3 / 4;
+    justify-self: end;
+    /* Ensure the button icon is white against the black header */
+    color: #fff; 
+}
+
+
+/* * 2. ZARA-INSPIRED CENTRAL TEXT STYLE (Final Sharper Aesthetics) */
+.central-header-text {
+    grid-column: 2 / 3; 
+    justify-self: center;
+    
+    /* Font Aesthetic */
+    font-family: 'Inter', sans-serif; /* Modern, clean font */
+    font-size: 1rem; /* Reduced size for a more subtle, tag-like look */
+    font-weight: 500; 
+    text-transform: uppercase;
+    
+    /* Fading Effect */
+    letter-spacing: 0.4em; /* **Increased spacing for high-end look** */
+    color: #ffffff; /* **Lighter gray (closer to white) for a subtle 'faded' effect** */
+    
+    /* Remove any default margin that could push it down */
+    margin: 0; 
+
+    transition: color 0.5s ease; 
+}
+
+/* * 3. LOGO and NAVBAR Styles (Only light mode relevant parts)
+ */
+
+header .logo-container .logo-img {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  transition: transform .3s;
+}
+
+header .logo-container .logo-img:hover {
+  transform: scale(1.2);
+}
+
+/* HAMBURGER MENU - Keep links dark for readability on light background */
+#main-nav a {
+  color: #000; 
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 15px 30px;
+  width: 100%;
+  text-align: left;
+  transition: background-color 0.3s;
+}
+#main-nav a:hover {
+  background-color: rgba(0, 0, 0, 0.1); 
+}
+
+
+/* intro */
+.intro {display:flex; justify-content:center; padding:3rem 0; margin-top:100px;}
+
+.intro-card {
+  display:flex; align-items:center;
+  background:#000; color:#fff;
+  padding:4rem; border-radius:20px;
+  width:90%; gap:4rem;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+  transition:all .4s;
+}
+
+.intro-card:hover {box-shadow:0 15px 40px rgba(0,0,0,.3); transform:scale(1.02);}
+
+.intro-photo img {
+  width:200px; height:200px;
+  border-radius:50%;
+  object-fit:cover;
+  filter:grayscale(100%);
+  transition:all .4s;
+}
+
+.intro-photo img:hover {filter:none; transform:scale(1.2);}
+
+.intro-text h1 {font-size:2.4rem; margin-bottom:1rem; font-style:italic;}
+
+.intro-text p {font-size:1.05rem; line-height:1.6; font-style:italic;}
+
+
+/* socials */
+#socials-section {display:flex; justify-content:center; margin:20px 0 70px;}
+
+.socials-card {
+  background:#000;
+  border-radius:50px;
+  padding:15px 40px;
+  display:flex; justify-content:center; align-items:center;
+  gap:35px;
+  width:500px; height:60px;
+  box-shadow:0 4px 10px rgba(0,0,0,.3);
+  transition:transform .2s;
+}
+
+.socials-card:hover {transform:scale(1.05);}
+
+.social-icon {color:#fff; font-size:1.8rem; transition:transform .2s, color .2s;}
+
+.social-icon:hover {transform:scale(1.2); color:#ccc;}
+
+
+/* divider */
+.section-divider {
+  width:60%; height:1px; margin:40px auto;
+  background:linear-gradient(to right,transparent 0%,#888 20%,#888 80%,transparent 100%);
+  border-radius:50px; display:block;
+}
+
+
+/* about */
+.about {text-align:center; color:#000; padding:3rem 15%;}
+
+.about h2 {font-size:2.2rem; margin-bottom:2rem; font-style:italic; font-family:Georgia,serif; font-weight:500;}
+
+.about p {font-size:1.2rem; line-height:1.8; font-family:Georgia,serif; font-style:italic; opacity:.85;}
+
+
+/* projects */
+#projects {padding:3rem; text-align:center; color:#fff; margin-bottom:70px;}
+
+.section-title {font-size:2.2rem; margin-bottom:5rem; font-style:italic; font-family:Georgia,serif; font-weight:500; color:#000;}
+
+.projects-container {display:flex; justify-content:center; gap:70px; flex-wrap:wrap;}
+
+.project-card {
+  background:#000; border-radius:20px;
+  width:300px; height:420px;
+  overflow:hidden; display:flex; flex-direction:column;
+  box-shadow:0 4px 12px rgba(255,255,255,.05);
+  transition:transform .3s;
+}
+
+.project-card:hover {transform:translateY(-8px);}
+
+.project-card img {width:100%; height:200px; object-fit:cover;}
+
+.project-card h3 {font-size:1.3rem; margin:20px 0 10px; color:#fff;}
+
+.project-card p {font-size:1rem; color:#ccc; padding:0 20px; flex-grow:1; display:flex; align-items:flex-start;}
+
+
+/* photography */
+#photography {padding:60px 20px; text-align:center;}
+
+.photography-title {font-size:2.2rem; margin-bottom:100px; font-style:italic; font-family:Georgia,serif; font-weight:500;}
+
+.photo-gallery {column-count:3; column-gap:20px; max-width:1200px; margin:0 auto;}
+
+.photo-gallery img {width:100%; margin-bottom:20px; border-radius:10px; display:block; break-inside:avoid; transition:transform .3s;}
+
+.photo-gallery img:hover {transform:scale(1.03);}
+
+
+/* contact */
+#contact {padding:80px 20px; text-align:center; background:#000; color:#fff;}
+
+.contact-title {font-size:2.5rem; margin-bottom:10px;}
+
+.contact-subtext {font-style:italic; margin-bottom:40px; color:#bbb;}
+
+.contact-form {
+  max-width:600px; margin:0 auto;
+  display:flex; flex-direction:column; gap:20px;
+}
+
+.contact-form input, .contact-form textarea {
+  padding:15px; background:#111;
+  border:1px solid #333; border-radius:8px;
+  color:#fff; font-size:1rem; outline:none;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {border-color:#fff;}
+
+.contact-form button {
+  background:#fff; color:#000;
+  padding:15px; border:none; border-radius:8px;
+  font-size:1rem; cursor:pointer; transition:transform .2s;
+}
+
+.contact-form button:hover {transform:scale(1.05);}
+
+
+/* media queries */
+@media(max-width:1024px){
+  header{padding:1rem 3%;}
+  header nav{gap:1.5rem;}
+  .intro-card{flex-direction:column; text-align:center; gap:2rem; padding:2rem;}
+  .intro-photo img{width:160px; height:160px;}
+  .intro-text h1{font-size:2rem;}
+}
+
+@media(max-width:768px){
+  header nav{display:none;}
+  .socials-card{width:90%; gap:20px; padding:10px 20px;}
+  .about{padding:2rem 10%;}
+  .about p{font-size:1rem;}
+  .projects-container{flex-direction:column; align-items:center; gap:40px;}
+  .project-card{width:90%; height:auto;}
+  .photo-gallery{column-count:2;}
+}
+
+@media(max-width:480px){
+  header .logo-text{font-size:1.2rem;}
+  .intro-card{padding:1.5rem;}
+  .intro-text h1{font-size:1.6rem;}
+  .intro-text p{font-size:.95rem;}
+  .social-icon{font-size:1.4rem;}
+  .photo-gallery{column-count:1;}
+  .contact-form input,.contact-form textarea{font-size:.9rem; padding:12px;}
+  .contact-form button{padding:12px; font-size:.9rem;}
+}
+body {
+    background: linear-gradient(to bottom, white 0%, white 50%, black 70%, black 100%);
+    color: white; 
+    /* ADDED TRANSITION property to enable smooth light/dark toggle */
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* stylesheet.css - Add at the end or in a separate section for utility/button styles */
+
+/* Dark Mode Toggle Button Styles */
+#mode-toggle {
+    background: none;
+    border: none;
+    color: #fff; /* White in light mode (default header color) */
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 10px;
+    transition: color 0.3s;
+    outline: none;
+}
+#mode-toggle:hover {
+    color: #ccc;
+}
+
+/* ICON ROTATION STYLES for smooth transition */
+#mode-toggle i {
+    /* Target the icon inside the button */
+    transition: color 0.5s ease, transform 0.5s ease;
+    display: block;
+}
+.dark-mode #mode-toggle i {
+    transform: rotate(360deg);
+}
+
+
+/* Dark Mode Overrides (when body has the 'dark-mode' class) */
+.dark-mode {
+    /* FIX 1: Apply the full beautiful dark gradient to the entire body */
+    /* FIX 4: Add transition-delay for the background color going back to day mode */
+    background: linear-gradient(135deg, #2b3a4a 0%, #171d24 100%) !important;
+    color: #fff;
+    transition: background-color 0.5s ease 0.3s, color 0.5s ease 0.3s; /* 0.3s delay added */
+}
+
+/* Header (DARK MODE - GLASSMORPHISM) */
+.dark-mode header {
+    /* ✅ FINAL HEADER GLASS MORPHISM */
+    background: rgba(0, 0, 0, 0.85); /* Darker opacity for a more defined header */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Subtle border for glass edge */
+    
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Ensure the toggle button is visible against the dark header */
+.dark-mode #mode-toggle {
+    color: #fff; 
+}
+.dark-mode #mode-toggle:hover {
+    color: #ddd;
+}
+
+/* Main Content Sections */
+.dark-mode .about {
+    color: #fff;
+}
+.dark-mode .about h2,
+.dark-mode .section-title,
+.dark-mode .photography-title {
+    color: #fff; /* Ensure section titles are visible */
+}
+
+/* FIX 5: Target the Photography title specifically and override its light mode color */
+.dark-mode .photography-title {
+    color: #fff !important; /* Forces white color on dark background */
+}
+
+/* Intro Card (DARK MODE - GLASSMORPHISM) */
+.dark-mode .intro-card {
+    /* FIX 2: Apply Glassmorphism */
+    background: rgba(0, 0, 0, 0.75); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7); 
+    color: #fff;
+}
+
+/* Project Cards (DARK MODE - GLASSMORPHISM) */
+.dark-mode .project-card {
+    /* ✅ Apply Glassmorphism properties */
+    background: rgba(0, 0, 0, 0.6); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    /* Retain transition for smooth hover/dark mode toggle */
+    transition: transform 0.3s, background-color 0.5s ease, box-shadow 0.3s;
+}
+
+/* FIX 3: Socials Card (DARK MODE - GLASSMORPHISM) */
+.dark-mode .socials-card {
+    background: rgba(0, 0, 0, 0.6); 
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    /* Added transition */
+    transition: transform 0.2s, background-color 0.5s ease;
+}
+
+/* Divider */
+.dark-mode .section-divider {
+    background: linear-gradient(to right, transparent 0%, #ffffff 20%, #ffffff 80%, transparent 100%);
+}
+
+/* Contact Section (DARK MODE - GLASSMORPHISM) */
+.dark-mode #contact {
+    /* ✅ GLASS MORPHISM FOR CONTACT SECTION */
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Top border for separation */
+    
+    transition: background-color 0.5s ease;
+}
+.dark-mode .contact-form input,
+.dark-mode .contact-form textarea {
+    /* Make inputs transparent/lighter against the dark glass */
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    /* Added transition */
+    transition: background-color 0.5s, border-color 0.5s;
+}
+.dark-mode .contact-form input:focus, .dark-mode .contact-form textarea:focus {border-color:#fff;}
+.dark-mode .contact-form button {
+    background: #bbb;
+    color: #000;
+    /* Added transition */
+    transition: transform 0.2s, background-color 0.5s, color 0.5s;
+}
+
+/* FOOTER (DARK MODE - GLASSMORPHISM) */
+.dark-mode footer {
+    /* ✅ GLASS MORPHISM FOR FOOTER */
+    background: rgba(0, 0, 0, 0.85); 
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    transition: background-color 0.5s ease;
+    color: #fff; /* Ensure footer text is white */
+}
+/* Ensure the second #contact section inside the footer inherits correctly or is reset */
+.dark-mode footer #contact {
+    /* Override any specific background the nested #contact might have */
+    background: transparent;
+    border-top: none;
+    color: inherit;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+
+/* HAMBURGER MENU (GLASSMORPHISM IN BOTH MODES) */
+/* This block is for Day Mode (no .dark-mode prefix) */
+#main-nav {
+  position: fixed;
+  top: 80px; /* Starts just below the header */
+  left: 0;
+  width: 250px; 
+  height: calc(100vh - 80px); 
+  /* ✅ FINAL HAMBURGER GLASS MORPHISM (DAY MODE: Light Tint) */
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 20px;
+  z-index: 1001;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-out;
+}
+
+/* ✅ FIX: Hamburger Menu Link Color (Day Mode) - Must be Black for Light Background */
+#main-nav a {
+  color: #000; /* Changed from #fff to #000 for Day Mode readability */
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 15px 30px;
+  width: 100%;
+  text-align: left;
+  border-bottom: none;
+  transition: background-color 0.3s;
+}
+#main-nav a:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Subtle black hover tint for day mode */
+}
+#main-nav.nav-open {
+  transform: translateX(0);
+}
+/* Ensure logo container is clickable for menu */
+.logo-container {cursor: pointer;}
+
+/* Dark Mode Override for Hamburger Menu (Darker Glass) */
+.dark-mode #main-nav {
+  /* ✅ FINAL HAMBURGER GLASS MORPHISM (NIGHT MODE: Dark Tint) */
+  background: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+/* ✅ FIX: Override link color back to White for Night Mode */
+.dark-mode #main-nav a {
+  color: #fff;
+}
+.dark-mode #main-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle white hover tint for night mode */
+}
+
+
+/* The following block was added to the original file in the middle, I am restoring it here */
+/* 2. Add smooth transition to the HEADER */
+header {
+    /* NEW: Apply a smooth transition to the header's background */
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+/* 3. Ensure the icon changes smoothly (already there, but good to check) */
+#mode-toggle i {
+    /* Target the icon inside the button */
+    transition: color 1.0s ease; 
+}
+
+/* 4. Update the dark mode class for smooth transitions (where colors change) */
+
+/* Dark Mode Overrides (when body has the 'dark-mode' class) */
+.dark-mode {
+    /* ... existing styles ... */
+    transition: background-color 0.5s ease, color 0.5s ease; /* Ensure this is also applied */
+}
+
+/* Optional: Apply transition to other elements like project cards */
+.project-card {
+    /* ... existing styles ... */
+    transition: transform 0.3s, background-color 0.5s ease; 
+}
+.dark-mode .project-card {
+    /* ... existing dark mode styles ... */
+    transition: transform 0.3s, background-color 0.5s ease;
+}
+#menu-hotspot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15px; /* Narrow hover zone */
+  height: 100vh;
+  z-index: 1000; /* Below the menu (1001) but above the rest of content */
+  cursor: pointer;
+  transition: width 0.3s ease-out; 
+}
+/* Optional visual feedback on hover */
+#menu-hotspot:hover {
+  width: 25px; 
+}
+
+#mode-toggle i {
+    transition: color 0.5s ease, transform 0.5s ease;
+    display: block;
+}
+
+/* 2. Apply rotation in Dark Mode */
+.dark-mode #mode-toggle i {
+    transform: rotate(360deg);
+}
