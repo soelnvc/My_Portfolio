@@ -53,7 +53,7 @@ function toggleMenu() {
     }
 }
 
-// Optional: Close the menu when a link is clicked
+// Close the menu when a link is clicked
 document.querySelectorAll('#main-nav a').forEach(link => {
     link.addEventListener('click', closeMenu);
 });
